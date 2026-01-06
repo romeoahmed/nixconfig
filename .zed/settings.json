@@ -1,0 +1,24 @@
+{
+  "lsp": {
+    "nixd": {
+      "settings": {
+        "diagnostic": {
+          "suppress": [ "sema-extra-with" ]
+        }
+      },
+      "initialization_options": {
+        "formatting": {
+          "command": [ "nixfmt" ]
+        }
+      }
+    }
+  },
+  "languages": {
+    "Nix": {
+      "language_servers": [
+        "nixd",
+        "!nil"
+      ]
+    }
+  }
+}

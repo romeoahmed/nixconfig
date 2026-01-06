@@ -1,30 +1,15 @@
-{ pkgs, ... }:
-
 {
   programs.zed-editor = {
     enable = true;
 
     extensions = [
       "nix"
+      "git-firefly"
       "html"
       "toml"
-      "make"
       "fish"
-      "zig"
-    ];
-
-    extraPackages = with pkgs; [
-      (rust-bin.stable.latest.default.override {
-        extensions = [
-          "rust-src"
-          "rust-analyzer"
-        ];
-      })
-
-      nixd
-      zls
-      clang-tools
-      basedpyright
+      "catppuccin"
+      "catppuccin-icons"
     ];
 
     mutableUserSettings = true;
@@ -35,6 +20,7 @@
       buffer_font_features = {
         calt = true;
       };
+      buffer_font_fallbacks = [ "Noto Sans CJK SC" ];
 
       features = {
         edit_prediction_provider = "zed";
@@ -44,10 +30,7 @@
         font_family = "JetBrainsMonoNL Nerd Font";
         font_size = 14;
         shell = {
-          with_arguments = {
-            program = "${pkgs.fish}/bin/fish";
-            args = [ "--login" ];
-          };
+          program = "fish";
         };
       };
     };

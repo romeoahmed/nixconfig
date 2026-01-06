@@ -1,17 +1,16 @@
-_:
-
 {
   imports = [
-    # ./modules/fonts.nix
-    # ./modules/inputMethod.nix
-    ./modules/packages.nix
-    ./modules/programs.nix
-    ./modules/gnupg.nix
-    ./modules/git.nix
-    # ./modules/alacritty.nix
-    # ./modules/vscode.nix
-    # ./modules/zed.nix
-    # ./modules/firefox.nix
+    ./modules/hm/fonts.nix
+    ./modules/hm/inputMethod.nix
+    ./modules/hm/packages.nix
+    ./modules/hm/programs.nix
+    ./modules/hm/gnupg.nix
+    ./modules/hm/git.nix
+    ./modules/hm/alacritty.nix
+    ./modules/hm/vscode.nix
+    ./modules/hm/zed.nix
+    ./modules/hm/catppuccin.nix
+    ./modules/hm/firefox.nix
   ];
 
   home = {
@@ -22,6 +21,32 @@ _:
     sessionVariables = {
       # EDITOR = "emacs";
     };
+  };
+
+  xdg = {
+    enable = true;
+
+    portal.config = {
+      common = {
+        default = [ "kde" ];
+      };
+    };
+
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+
+    terminal-exec = {
+      enable = true;
+      settings = {
+        default = [
+          "Alacritty.desktop"
+        ];
+      };
+    };
+
+    autostart.enable = true;
   };
 
   # Let Home Manager install and manage itself.

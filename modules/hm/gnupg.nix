@@ -16,13 +16,13 @@
       {
         # Linus Torvalds
         # Fingerprint ABAF 11C6 5A29 70B1 30AB  E3C4 79BE 3E43 0041 1886
-        source = ./pubkeys/torvalds.asc;
+        source = ../pubkeys/torvalds.asc;
         trust = "full";
       }
       {
         # Greg Kroah-Hartman
         # Fingerprint 	647F 2865 4894 E3BD 4571  99BE 38DB BDC8 6092 693E
-        source = ./pubkeys/gregkh.asc;
+        source = ../pubkeys/gregkh.asc;
         trust = "full";
       }
     ];
