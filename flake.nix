@@ -65,7 +65,7 @@
     };
 
     rime-wanxiang = {
-      url = "github:amzxyz/rime_wanxiang";
+      url = "github:amzxyz/rime_wanxiang/wanxiang-base";
       flake = false;
     };
   };
